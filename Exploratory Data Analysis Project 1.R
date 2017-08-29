@@ -31,7 +31,8 @@ dtMelt <- melt(dt, id.vars = "dateTime", measure.vars = c("Sub_metering_1", "Sub
 p1 <- ggplot(data = dtMelt, aes(x = dateTime, y = value, group = variable)) + 
         geom_line(aes(color=variable), size = .2) +
         guides(color = guide_legend(title=NULL)) +
-        scale_x_datetime(breaks = pretty_breaks(3), date_labels = c("Sat", "Thu", "Fri"))
+        scale_x_datetime(breaks = pretty_breaks(3), date_labels = c("Sat", "Thu", "Fri"))+
+        theme(legend.position = c(.8,.8))
 
 ## Change Label colors in legend from https://stackoverflow.com/questions/23588127/match-legend-text-color-in-geom-text-to-symbol     
 library(grid)
