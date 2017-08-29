@@ -63,22 +63,24 @@ png("~/ExData_Plotting1/plot4.png", width=720, height=720)
 plot.new()
 pushViewport(viewport(layout = grid.layout(2, 2)))
 
-#Draw ggplot
+#Draw base plot
 pushViewport(viewport(layout.pos.row = 1, layout.pos.col = 1))
 par(fig = gridFIG(), new = TRUE)
 with(data2, plot(data2$dateTime, data2$Global_active_power, type = "l"))
 popViewport()
 
-#Draw bsae plot
+#Draw base plot
 pushViewport(viewport(layout.pos.row = 1, layout.pos.col = 2))
 par(fig = gridFIG(), new = TRUE)
 with(data2, plot(data2$dateTime, data2$Voltage, type = "l"))
 popViewport()
 
+#Print ggplot
 pushViewport(viewport(layout.pos.row = 2, layout.pos.col = 1))
 print(grid.draw(g), newpage = FALSE)
 popViewport()
 
+#Draw base plot
 pushViewport(viewport(layout.pos.row = 2, layout.pos.col = 2))
 par(fig = gridFIG(), new = TRUE)
 with(data2, plot(data2$dateTime, data2$Global_reactive_power, type = "l"))
